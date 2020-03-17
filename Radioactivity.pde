@@ -1,4 +1,4 @@
-float numDice = 1000;
+float numDice = 10000;
 int rolls = 0;
 int numToRemove = 6;
 Die[] dice = new Die[floor(numDice)];
@@ -20,7 +20,6 @@ void draw(){
   text("Roll",210,475);
   for(int i = 0; i < living.size()-1; i++){
     line(i*5,400*(1.0-(living.get(i)/numDice)),(i+1)*5,400*(1.0-(living.get(i+1))/numDice));
-    println(400*(1.0-numDice/living.get(i)));
   }
 }
 
@@ -32,6 +31,7 @@ void mouseClicked(){
       }
     }
     living.append(getLiving());
+    println(living.get(living.size()-1));
   }
  }
 
