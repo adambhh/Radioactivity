@@ -1,12 +1,12 @@
-float numDice = 10000;
+float numDice = 10000;//antal terninger
 int rolls = 0;
-int numToRemove = 6;
+int numToRemove = 6; //tal der skal slås >= for at fjerne terningen
 Die[] dice = new Die[floor(numDice)];
 IntList living = new IntList();
 void setup(){
   size(500,500);
   for(int i = 0; i < dice.length;i++){
-    dice[i] = new Die(6);
+    dice[i] = new Die(6);//antal sider på terningen
   }
   living.append(getLiving());
 }
@@ -31,7 +31,8 @@ void mouseClicked(){
       }
     }
     living.append(getLiving());
-    println(living.get(living.size()-1));
+    print(living.get(living.size()-1) + ",");
+    println(living.get(living.size()-2)-living.get(living.size()-1));
   }
  }
 
